@@ -4,9 +4,10 @@
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th{:class => ("hilite" if params[:sort] == "title")}= link_to "Movie Title", {:controller => "movies", :sort => "title", :filter => @filterred_ratings.to_s}, :id => "title_header"
       %th Rating
-      %th Release Date
+      %th
+        %a{ :id => "release_date_header", :href => "#" } Release Date
       %th More Info
   %tbody
     - @movies.each do |movie|
