@@ -4,10 +4,10 @@
 %table#movies
   %thead
     %tr
-      %th#title_header 
+      %th#title_header{ :class => @css["title"] }
         = link_to 'Movie Title', movies_path({:sort => 'title'})
       %th Rating
-      %th#release_date_header 
+      %th#release_date_header{ :class => @css["release_date"] }
         = link_to 'Release Date', movies_path({:sort => 'release_date'})
       %th More Info
   %tbody
