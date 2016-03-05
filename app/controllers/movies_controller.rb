@@ -14,8 +14,6 @@ class MoviesController < ApplicationController
     @all_ratings=Movie.all_ratings
      
     redirect=false 
-  
-    logger.debug(session.inspect)
 
    if params[:sort_by]
       @sort_by = params[:sort_by]
