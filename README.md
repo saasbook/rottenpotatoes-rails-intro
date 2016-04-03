@@ -22,7 +22,7 @@ copy of the repository to your development workspace:
 0. Then `cd rottenpotatoes-rails-intro` to change to the app's
 directory.
 
-0. Run the command `bundle install` to make sure all the gems
+0. Run the command `bundle install --without production` to make sure all the gems
 (libraries) used by the app are in place.
 
 0. Run `bundle exec rake db:setup` to create the initial database.
