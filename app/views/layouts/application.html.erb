@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Rotten Potatoes!</title>
+    <%= stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <h1 class="title">Rotten Potatoes!</h1>
+    <div id="main">
+      <% if flash[:notice] %>
+        <div class="message" id="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:warning] %>
+        <div class="message" id="warning">
+          <%= flash[:warning] %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
