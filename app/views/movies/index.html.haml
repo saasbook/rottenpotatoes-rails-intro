@@ -4,9 +4,9 @@
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th{class: ("hilite" if params[:sort_on?] == "title")}= link_to "Movie Title",  sort_on?: "title"
       %th Rating
-      %th Release Date
+      %th{class: ("hilite" if params[:sort_on?] == "release_date")}= link_to "Release Date",  sort_on?: "release_date"
       %th More Info
   %tbody
     - @movies.each do |movie|
