@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 log
+
+# Ignore coverage generated from Simplcov
+/coverage

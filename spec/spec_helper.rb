@@ -16,6 +16,16 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+# require simplecov at begining of test run
+require 'simplecov'
+SimpleCov.start 'rails' do
+  # This sets the minimum amount of coverage allowed for the project
+  SimpleCov.minimum_coverage 50 # TODO: make this higher
+  SimpleCov.minimum_coverage_by_file 20 # TODO: make this higher
+  # SimpleCov.maximum_coverage_drop 5
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
