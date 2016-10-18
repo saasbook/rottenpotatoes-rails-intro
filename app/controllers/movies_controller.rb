@@ -11,7 +11,36 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    option = params[:option]
+    rating = params[:ratings]
+    @result = Movie.select(:rating).distinct
+    @all_ratings = @result.map{|i| i.rating}
+
+    if session['rating_selected'] == nil
+       session['rating_selected'] = @all_ratings
+    end
+
+    if option!=nil
+      session['sorting_selected'] = option
+    end
+
+    if rating!=nil
+     @selected = rating.keys
+     session['rating_selected'] = @selected
+    end
+
+    if session['sorting_selected']=="title_header"
+      @selected = session['rating_selected']
+      @movies = Movie.where(rating:@selected).order :title
+      @sort = 'title'
+    elsif session['sorting_selected']=='release_date_header'
+      @selected = session['rating_selected']
+      @movies = Movie.where(rating:@selected).order :release_date
+      @sort = 'date'
+    elsif session['sorting_selected']==nil
+      @selected = session['rating_selected']
+      @movies = Movie.where rating:@selected
+    end
   end
 
   def new
@@ -19,6 +48,7 @@ class MoviesController < ApplicationController
   end
 
   def create
+    #debugger
     @movie = Movie.create!(movie_params)
     flash[:notice] = "#{@movie.title} was successfully created."
     redirect_to movies_path
