@@ -12,14 +12,27 @@ class MoviesController < ApplicationController
 
   def index
     option = params[:option]
+    rating = params[:ratings]
+    @result = Movie.select(:rating).distinct
+    @all_ratings = @result.map{|i| i.rating}
+
     if(option=="title_header")
+      @selected = @all_ratings
       @movies = Movie.all.order(:title)
       @sort = 'title'
     elsif(option=='release_date_header')
+      @selected = @all_ratings
       @movies = Movie.all.order(:release_date)
       @sort = 'date'
     elsif(option==nil)
+      @selected = @all_ratings
       @movies = Movie.all
+    if(rating!=nil)
+        @selected = rating.keys
+        @movies = Movie.where(rating:@selected)
+      else
+        @movies = Movie.all
+      end
     end
   end
 
