@@ -11,12 +11,9 @@ class MoviesController < ApplicationController
   end
 
   def index
-    sort = params[:sort]
-    case sort
-    when 'title'
-      ordering,@title_header = {:title => :asc}, 'hilite'
-    end
-    @movies = Movie.all
+    @movies = Movie.order(params[:sort_by])
+    if params[:sort_by] == 'title'
+      @title_header = 'hilite'
   end
 
   def new
