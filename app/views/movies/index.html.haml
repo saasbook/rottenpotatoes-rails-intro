@@ -1,12 +1,19 @@
 -#  This file is app/views/movies/index.html.haml
 %h1 All Movies
 
+= form_tag movies_path, :method => :get, :id => 'ratings_form' do
+  Include:
+  - Movie.all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]", rating, if session[:ratings]; session[:ratings].include?(rating) end
+  = submit_tag 'Refresh', :id => 'ratings_submit'
+  
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th{:id => 'title_header', :class => @title_header}= link_to "Movie Title", movies_path(:sort_by_param => 'title')
       %th Rating
-      %th Release Date
+      %th{:id => 'release_date_header', :class => @release_date_header}= link_to "Release Date", movies_path(:sort_by_param => 'release_date')
       %th More Info
   %tbody
     - @movies.each do |movie|
@@ -17,3 +24,7 @@
         %td= link_to "More about #{movie.title}", movie_path(movie)
 
 = link_to 'Add new movie', new_movie_path
+
+
+#added comment to test branching code in github repository
+#adding comment in master branch to test branching in github
