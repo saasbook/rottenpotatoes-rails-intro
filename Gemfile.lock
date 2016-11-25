@@ -41,6 +41,10 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.5)
+    carrierwave (1.0.0.rc)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -219,6 +223,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  carrierwave (>= 1.0.0.rc, < 2.0)
   coffee-rails (~> 4.1.0)
   guard-rspec
   haml
@@ -241,4 +246,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.12.4
+   1.13.6
