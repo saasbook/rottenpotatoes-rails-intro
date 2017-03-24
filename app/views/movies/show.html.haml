@@ -15,5 +15,5 @@
 %p#description= @movie.description
 
 = link_to 'Edit', edit_movie_path(@movie)
-= button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to movie list', movies_path
+= button_to 'Delete', movie_path(@movie), :method => :delete, :action => :destroy, data: {:confirm => 'Are you sure?'}
+= link_to 'Back to movies list', movies_path
