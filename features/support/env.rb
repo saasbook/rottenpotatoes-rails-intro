@@ -46,12 +46,20 @@ Capybara.register_driver :poltergeist do |app|
     :js_errors => true,
     :timeout => 120,
     :debug => false,
+    :phantomjs => Phantomjs.path,
     :phantomjs_options => ['--load-images=no', '--disk-cache=false'],
     :inspector => true,
   }
   Capybara::Poltergeist::Driver.new(app, options)
 end
 
+
+# Capybara.register_driver :poltergeist do |app|
+#   Capybara::Poltergeist::Driver.new(app, js_errors: false,
+#                                     phantomjs: Phantomjs.path,
+#                                     phantomjs_options: ['--ssl-protocol=tlsv1.2', '--ignore-ssl-errors=yes'])
+# end
+#
 Capybara.default_driver = :poltergeist
 Capybara.javascript_driver = :poltergeist
 

@@ -20,12 +20,10 @@ Background: movies have been added to database
   | Raiders of the Lost Ark      | PG     | 12-Jun-1981  |
   | Chicken Run                  | G      | 21-Jun-2000  |
 
-  And  I go to the details page for "Superfluous Away Team Member"
+  And I go to the details page for "Superfluous Away Team Member"
  
  @javascript
 Scenario: delete movie and confirm
-  Then show me the page
-  When I press "Delete" 
   And I confirm popup with message "Are you sure?"
   Then I should be on the home page
   Then I should see "Movie 'Superfluous Away Team Member' deleted."
@@ -33,7 +31,6 @@ Scenario: delete movie and confirm
 
 @javascript
 Scenario: delete movie but cancel
-  When I press "Delete"
   And I dismiss popup with message "Are you sure?"
   Then I should be on the details page for "Superfluous Away Team Member"
   When I follow "Back to movies list"
