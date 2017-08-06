@@ -16,6 +16,9 @@ a {
   text-decoration: underline;
   font-weight: bold;
 }
+ table#movies th.hilite {
+  background-color: yellow;
+}
 h1 {
   color: maroon;
   font-size: 150%;
@@ -48,6 +51,11 @@ table#movies th, table#movies td {
   padding: 4px;
   text-align: left;
 }
+
+table#movies th.hilite {
+  background-color: yellow;
+}
+
 #notice #warning {
   background: rosybrown;
   margin: 1em 0;
