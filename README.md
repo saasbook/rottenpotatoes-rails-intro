@@ -10,9 +10,9 @@ To get started:
 environment](https://github.com/saasbook/courseware/wiki/Setting-up-Cloud9)
 for the course.
 
-0. In your Cloud9 terminal, type the following command to clone the repository to your development workspace:
+0. Fork this repo to your GitHub account, then in your Cloud9 terminal, type the following command to clone your fork to your development workspace:
 
-  `git clone git@github.com:saasbook/rottenpotatoes-rails-intro.git`
+  `git clone git@github.com:your_github_username/rottenpotatoes-rails-intro.git`
 
 0. Then `cd rottenpotatoes-rails-intro` to change to the app's
 directory.
