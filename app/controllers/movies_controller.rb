@@ -22,8 +22,8 @@ class MoviesController < ApplicationController
     session[:sort] ||= 'id'
 
     #Highlight selected title or ratings header
-    @title_hilite = session[:title_hilite] = "hilite" if params[:sort] == 'title'
-    @date_hilite = session[:date_hilite] = "hilite" if params[:sort] == 'release_date'
+    @hilite_title = session[:hilite_title] = "hilite" if params[:sort] == 'title'
+    @hilite_date = session[:hilite_date] = "hilite" if params[:sort] == 'release_date'
 
     #Save settings
     session[:ratings] = params[:ratings].keys if params[:ratings]
@@ -33,6 +33,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path(ratings: Hash[session[:ratings].map {|r| [r,1]}], 
     sort: session[:sort]) if  params[:ratings].nil? || params[:sort].nil?
 
+    #save rating and sort
     @ratings = session[:ratings]
     @sort = session[:sort]
 
