@@ -19,24 +19,24 @@ class MoviesController < ApplicationController
     session[:ratings] ||= @all_ratings
     
     #Default sort by id
-    session[:sorted] ||= 'id'
+    session[:sort] ||= 'id'
 
     #Highlight selected title or ratings header
-    @hilite_title = session[:hilite_title] = "hilite" if params[:sorted] == 'title'
-    @hilite_date = session[:hilite_date] = "hilite" if params[:sorted] == 'release_date'
+    @hilite_title = session[:hilite_title] = "hilite" if params[:sort] == 'title'
+    @hilite_date = session[:hilite_date] = "hilite" if params[:sort] == 'release_date'
 
     #Save settings
     session[:ratings] = params[:ratings].keys if params[:ratings]
-    session[:sorted] = params[:sorted] if params[:sorted]
+    session[:sort] = params[:sort] if params[:sort]
 
-    #Preserving restful by passing hash to movies_path
+    #Preserving restful by passing hash to movies_path and saving with session
     redirect_to movies_path(ratings: Hash[session[:ratings].map {|r| [r,1]}], 
-    sorted: session[:sorted]) if  params[:ratings].nil? || params[:sorted].nil?
+    sort: session[:sort]) if  params[:ratings].nil? || params[:sort].nil?
 
     @ratings = session[:ratings]
-    @sorted = session[:sorted]
+    @sort = session[:sort]
 
-    @movies = Movie.where(rating: @ratings).order(@sorted)
+    @movies = Movie.where(rating: @ratings).order(@sort)
   end
 
   def new
