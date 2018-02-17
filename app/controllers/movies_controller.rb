@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     
      @all_ratings = Movie.ratings
 
-    #Set ratings to all ratings if not set
+    #Set ratings to default or saved ratings
     @ratings = params[:ratings] || session[:ratings] || {}
     
     #Default sort by id
@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     @ratings = session[:ratings]
     @sort = session[:sort]
 
-    @movies = Movie.where(rating: @ratings).order(@sort)
+    @movies = Movie.where(rating: @ratings).order(params[:sort])
   end
 
   def new
