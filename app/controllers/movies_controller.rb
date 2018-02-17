@@ -36,14 +36,15 @@ class MoviesController < ApplicationController
       session[:sort] = params[:sort]
     end
 
-
-    #save rating and sort values
+    #set rating and sort values
     @ratings = session[:ratings]
     @sort = session[:sort]
 
-    #Preserving restful by passing hash to movies_path and saving with session
-    redirect_to movies_path(ratings: Hash[session[:ratings].map {|r| [r,1]}], 
-    sort: session[:sort]) if  params[:ratings].nil? || params[:sort].nil?
+    #preserve restful by saving if sort and ratings are set
+    if  !(params[:ratings].nil?) || !(params[:sort].nil?)
+      redirect_to movies_path(ratings: Hash[session[:ratings].map {|r| [r,1]}], 
+      sort: session[:sort])
+    end
   
     #Set movies to new list depending on rating settings AND sort
     @movies = Movie.where(rating: @ratings).order(session[:sort])
