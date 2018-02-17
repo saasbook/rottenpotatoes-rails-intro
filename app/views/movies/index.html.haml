@@ -11,6 +11,7 @@
 %table#movies
   %thead
     %tr
+    -#add links to sort
       %th{class: @title_hilite}
         = link_to 'Movie Title', movies_path(sort: 'title'), id: 'title_header'
       %th Rating
