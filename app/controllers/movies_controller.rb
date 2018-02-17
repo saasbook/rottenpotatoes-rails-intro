@@ -29,8 +29,12 @@ class MoviesController < ApplicationController
     end
 
     #Save settings for part 3
-    session[:ratings] = params[:ratings].keys if params[:ratings]
-    session[:sort] = params[:sort] if params[:sort]
+    if params[:ratings]
+      session[:ratings] = params[:ratings].keys
+    end
+    if params[:sort]
+      session[:sort] = params[:sort]
+    end
 
     #Preserving restful by passing hash to movies_path and saving with session
     redirect_to movies_path(ratings: Hash[session[:ratings].map {|r| [r,1]}], sort: session[:sort]) if  params[:ratings].nil? || params[:sort].nil?
