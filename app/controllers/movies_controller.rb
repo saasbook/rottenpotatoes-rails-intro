@@ -21,8 +21,10 @@ class MoviesController < ApplicationController
     session[:sort] ||= 'id'
 
     #Highlight selected title or ratings header
-    @title_hilite = session[:title_hilite] = "hilite" if params[:sort] == 'title'
-    @date_hilite = session[:date_hilite] = "hilite" if params[:sort] == 'release_date'
+    if params[:sort] == 'title'
+      @title_hilite = session[:title_hilite] = "hilite"
+    if params[:sort] == 'release_date'
+      @date_hilite = session[:date_hilite] = "hilite"
 
     #Save settings for part 3
     session[:ratings] = params[:ratings].keys if params[:ratings]
