@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
 
     #preserve restful state
     if  params[:ratings].nil? || params[:sort].nil?
-      redirect_to movies_path(ratings: Hash[session[:ratings].map {|ratings| [ratings,1]}], 
+      redirect_to movies_path(ratings: Hash[session[:ratings].map {|ratings| [ratings,ratings]}], 
       sort: session[:sort])
     end
     
