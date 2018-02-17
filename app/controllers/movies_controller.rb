@@ -11,7 +11,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movie = Movie.all
     
     @all_ratings = Movie.ratings
 
@@ -37,7 +36,7 @@ class MoviesController < ApplicationController
     @ratings = session[:ratings]
     @sort = session[:sort]
 
-    @movie = Movie.where(rating: @ratings).order(@sort)
+    @movies = Movie.where(rating: @ratings).order(@sort)
   end
 
   def new
