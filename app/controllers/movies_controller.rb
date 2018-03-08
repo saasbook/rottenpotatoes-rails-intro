@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
     end
 
     #preserve restful status
-    redirect_to movies_path(ratings: Hash[session[:ratings].map {|r| [r,1]}], sort: session[:sort]) if  params[:ratings].nil? || params[:sort].nil?
+    redirect_to movies_path(ratings: Hash[session[:ratings].map {|rating| [rating,1]}], sort: session[:sort]) if  params[:ratings].nil? || params[:sort].nil?
     
     #set rating and sort values
     @ratings = session[:ratings]
