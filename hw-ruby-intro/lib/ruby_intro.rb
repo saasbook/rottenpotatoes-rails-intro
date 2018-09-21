@@ -20,14 +20,16 @@ def max_2_sum arr
     #x = sum(arr.last(2))
     #return x
     
+    #sort the array, take the last two, and add them
     arr.sort.last(2).reduce(0, :+)
     
 end
 
 def sum_to_n? arr, n
 
+  # takes a combination of 2 values, returns true if they equal n
   arr.combination(2).to_a.any? {|a| a[0] + a[1] == n}
-  
+   
 end
 
 # Part 2
@@ -40,12 +42,14 @@ end
 
 def starts_with_consonant? s
     
+    #Make string downcase, then see if the first element matches a vowel
   s[0..0].downcase =~ /[bcdfghjklmnpqrstvxz]/
 
 end
 
 def binary_multiple_of_4? s
-
+    
+    #If the last two digits 
     if (/^[0-1]+$/.match(s)).nil?
         return false
   

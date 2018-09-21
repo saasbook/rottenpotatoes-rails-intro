@@ -1,25 +1,31 @@
 module FunWithStrings
-  def palindrome? s
-    if s.downcase = s.downcase.reverse
-        return true
+  def palindrome? 
+  #replace non alpha characters with spaces, lower to downcase
+    s = gsub(/\W/, '').downcase
+    s == s.reverse
+    
   end
   def count_words
-  
-  scan=string.scan(/[a-z]+/) 
-  count={}
-  scan.each do |x| 
-    if count.has_key?x then 
-      count[x]=count[x]+1
-    else 
-      count[x]=1
-    end
+    
+    #creates new hash
+    wordsCount = Hash.new(0)
+    #replaces all non alphabetic characters with spaces
+    s = gsub(/[\W]/, ' ') 
+    #makes string downcase, splits string to seperate words. Add each
+    # word to their specific key
+    s.downcase.split(' ').each do |word|
+    wordsCount[word] += 1
   end
-  count
-  end
-  def anagram_groups
-    # your code here
-  end
+  return wordsCount
 end
+  end
+  
+  def anagram_groups
+    s.each do |word|
+    key = word.split('').sort.join
+      result[key] << word 
+    end
+   end
 
 # make all the above functions available as instance methods on Strings:
 

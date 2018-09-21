@@ -2,7 +2,7 @@ require 'dessert'
 require 'byebug'
 require 'rspec/its'
 
-describe Dessert, :pending => true do
+describe Dessert do
   describe 'cake' do
     subject { Dessert.new('cake', 400) }
     its(:calories) { should == 400 }
@@ -10,6 +10,20 @@ describe Dessert, :pending => true do
     it { should be_delicious }
     it { should_not be_healthy }
   end
+
+#Test to run a dessert for pie
+describe 'pie' do
+    #new constructor for pie
+    subject{ Dessert.new('pie', 500)}
+    # calories and name should match the constructor
+    its(:calories) {should == 500 }
+    its(:name)     {should == 'pie' }
+    # Pie is delicious
+    it { should be_delicious }
+    # pie is not healthy
+    it { should_not be_healthy }
+    end
+    
   describe 'apple' do
     subject { Dessert.new('apple', 75) }
     it { should be_delicious }
@@ -28,7 +42,7 @@ describe Dessert, :pending => true do
   end
 end
 
-describe JellyBean, :pending => true do
+describe JellyBean do
   describe 'when non-licorice' do
     subject { JellyBean.new('vanilla') }
     its(:calories) { should == 5 }

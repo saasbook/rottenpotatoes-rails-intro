@@ -36,6 +36,7 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rb-readline (0.5.5)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -63,11 +64,16 @@ DEPENDENCIES
   byebug (>= 6.0.2)
   guard (>= 2.13.0)
   guard-rspec (>= 4.6.4)
+  pry
+  rb-readline
   rspec (>= 3.3.0)
   rspec-core (>= 3.3.2)
   rspec-expectations (>= 3.3.1)
   rspec-its (>= 1.2.0)
   rspec-mocks (>= 3.3.2)
 
+RUBY VERSION
+   ruby 2.4.4p296
+
 BUNDLED WITH
-   1.10.6
+   1.16.5
