@@ -1,0 +1,19 @@
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+/usr/bin/ruby2.5 -r ./siteconf20180920-16449-umlsi.rb extconf.rb
+creating Makefile
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20180920-16449-y5vxd2/byebug
