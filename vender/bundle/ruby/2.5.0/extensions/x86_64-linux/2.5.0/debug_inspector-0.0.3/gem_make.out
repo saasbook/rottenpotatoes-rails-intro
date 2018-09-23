@@ -1,0 +1,15 @@
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/usr/bin/ruby2.5 -r ./siteconf20180920-16449-hqyl07.rb extconf.rb
+creating Makefile
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20180920-16449-fs7c8x

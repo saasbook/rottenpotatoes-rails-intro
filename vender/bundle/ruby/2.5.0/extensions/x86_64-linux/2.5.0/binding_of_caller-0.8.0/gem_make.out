@@ -1,0 +1,16 @@
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/usr/bin/ruby2.5 -r ./siteconf20180920-16449-1s063p3.rb extconf.rb
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /home/magnus/Documents/Class/606/rottenpotatoes-rails-intro/vender/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

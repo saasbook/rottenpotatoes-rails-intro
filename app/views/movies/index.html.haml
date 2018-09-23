@@ -1,12 +1,13 @@
--#  This file is app/views/movies/index.html.haml
 %h1 All Movies
 
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th{ :class => ("hilite" if @order_by_title)}
+        %a{ :id => "title_header", :href => "?order_by_title=true"} Movie Title
       %th Rating
-      %th Release Date
+      %th{ :class => ("hilite" if @order_by_release_date)}
+        %a{ :id => "release_date_header", :href => "?order_by_release_date=true"} Release Date
       %th More Info
   %tbody
     - @movies.each do |movie|
