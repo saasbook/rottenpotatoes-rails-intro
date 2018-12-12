@@ -20,4 +20,5 @@ movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
 
 movies.each do |movie|
   Movie.create!(movie)
+  puts "inserted #{movie}"
 end
