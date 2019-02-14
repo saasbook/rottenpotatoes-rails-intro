@@ -28,7 +28,7 @@ $ git push heroku master
 
 For Berkeley students, please push your code to your remote repository:
 ```sh
-$ git push
+$ git push origin master
 ```
 
 Next: [Submission](../README.md#how-to-submit-when-youre-all-done)
