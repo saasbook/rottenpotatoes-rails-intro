@@ -1,21 +1,17 @@
 !!!
 %html
   %head
-    %link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous") 
     %title Rotten Potatoes!
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  
+
   %body
-    %div.navbar.navbar-expand-lg.bg-primary.text-white
-      %h1.title Rotten Potatoes!
+    %h1.title Rotten Potatoes!
     #main
       - if flash[:notice]
-        %div.alert.alert-danger
-          #notice.message= flash[:notice]
+        #notice.message= flash[:notice]
       - elsif flash[:warning]
-        %div.alert.alert-danger
-          #warning.message= flash[:warning]
+        #warning.message= flash[:warning]
 
       = yield
