@@ -2,13 +2,7 @@
 
 On the list of all movies page, make the column headings for "Movie Title" and "Release Date" into clickable links. Clicking one of them should cause the list to be reloaded but sorted in ascending order on that column. For example, clicking the "release date" column heading should redisplay the list of movies with the earliest-released movies first; clicking the "title" header should list the movies alphabetically by title. (For movies whose names begin with non-letters, the sort order should match the behavior of `String#<=>`.)
 
-When the listing page is redisplayed with sorting-on-a-column enabled, the column header that was selected for sorting should appear with a yellow background, as shown below. You should do this by setting controller variables that are used to conditionally set the CSS class of the appropriate table heading to `hilite`, and pasting this simple CSS into RottenPotatoes `app/assets/stylesheets/default.css` file:
-
-```css
-table#movies th.hilite {
-  background-color: yellow;
-}
-```
+When the listing page is redisplayed with sorting-on-a-column enabled, the column header that was selected for sorting should appear with a yellow background, as shown below. You should do this by setting controller variables that are used to conditionally set the CSS class of the appropriate table heading to `hilite`, and adding an appropriate utility class from the [Bootstrap Colors](https://getbootstrap.com/docs/4.0/utilities/colors/) set.
 
 The result should look something like this:
 
