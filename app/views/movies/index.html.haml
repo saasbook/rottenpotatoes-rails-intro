@@ -1,7 +1,7 @@
 -#  This file is app/views/movies/index.html.haml
 %h2 All Movies
 
-%table.table-striped.col-md-5
+%table.table.table-striped.col-md-12
   %thead
     %tr
       %th Movie Title
@@ -11,7 +11,7 @@
   %tbody
     - @movies.each do |movie|
       %tr
-        %td= movie.title 
+        %td= movie.title
         %td= movie.rating
         %td= movie.release_date
         %td= link_to "More about #{movie.title}", movie_path(movie)
