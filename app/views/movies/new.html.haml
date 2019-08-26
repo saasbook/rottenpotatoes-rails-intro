@@ -1,4 +1,4 @@
-%h1 Create New Movie
+%h2 Create New Movie
 
 = form_tag movies_path do
 
@@ -11,4 +11,4 @@
   = label :movie, :release_date, 'Released On'
   = date_select :movie, :release_date
 
-  = submit_tag 'Save Changes'
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
