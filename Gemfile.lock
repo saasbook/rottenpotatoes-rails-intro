@@ -104,6 +104,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     nenv (0.3.0)
+    nio4r (2.5.2)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
@@ -113,6 +114,8 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    puma (4.3.1)
+      nio4r (~> 2.0)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -227,6 +230,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.21)
+  puma
   rails (= 4.2.10)
   rails_12factor
   rspec-rails
