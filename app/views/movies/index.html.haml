@@ -1,12 +1,15 @@
 -#  This file is app/views/movies/index.html.haml
-%h2 All Movies
+%h2= link_to 'Movies', movies_path
 
 %table#movies.table.table-striped.col-md-12
   %thead
     %tr
-      %th Movie Title
+      %th{:class => @movie_title_th_classes}
+        = link_to "Movie Title", movies_path(sort_by: 'title'), id: 'title_header'
       %th Rating
-      %th Release Date
+      %th{:class => @movie_release_date_th_classes}
+        = link_to 'Release Date', movies_path(sort_by: 'release_date'), id: 'release_date_header'
+        // creates link like ?sort_by=release_date
       %th More Info
   %tbody
     - @movies.each do |movie|
@@ -14,6 +17,6 @@
         %td= movie.title
         %td= movie.rating
         %td= movie.release_date
-        %td= link_to "More about #{movie.title}", movie_path(movie)
+        %td= link_to "More about #{movie.title}", movies_path(movie)
 
 = link_to 'Add new movie', new_movie_path
