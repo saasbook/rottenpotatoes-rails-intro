@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"></link>
+    <title>Rotten Potatoes!</title>
+    <%= stylesheet_link_tag 'application', 'media' => 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <body>
+      <div class="container">
+        <div class="navbar navbar-expand-lg bg-primary text-white">
+          <h1 class="title">Rotten Potatoes!</h1>
+        </div>
+        <div id="main">
+          <% if flash[:notice] %>
+            <div class="alert alert-danger">
+              <div class="message" id="notice">
+                <%= flash[:notice] %>
+              </div>
+            </div>
+          <% elsif flash[:warning] %>
+            <div class="alert alert-danger">
+              <div class="message" id="warning">
+                <%= flash[:warning] %>
+              </div>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </body>
+  </head>
+</html>
