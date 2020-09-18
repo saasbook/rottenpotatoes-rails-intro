@@ -1,5 +1,6 @@
 <!--  app/views/movies/show.html.erb -->
-<h3>Details about <em><%= @movie.title %></em></h3>
+<h2>Details about <em><%= @movie.title %></em></h2>
+
 <ul id="details">
   <li>
     Rating:
@@ -10,10 +11,12 @@
     <%= @movie.release_date.strftime("%B %d, %Y") %>
   </li>
 </ul>
-<h4>Description:</h4>
+
+<h3>Description:</h3>
 <p id="description">
   <%= @movie.description %>
 </p>
+
 <div class="row">
   <%= link_to 'Edit', edit_movie_path(@movie), :class => 'btn btn-primary col-2' %>
   <%= link_to 'Delete', movie_path(@movie), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
