@@ -1,15 +1,14 @@
 source 'https://rubygems.org'
 
-ruby '>= 2.6.4', '< 2.7.0'
+ruby '~> 2.6.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.10'
+gem 'rails', '4.2.11'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use Haml as the templating library
-gem 'haml'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -41,5 +40,3 @@ group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
   gem 'rails_12factor'
 end
-
-
