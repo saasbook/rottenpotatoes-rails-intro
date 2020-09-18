@@ -2,7 +2,7 @@
 
 Enhance RottenPotatoes as follows. At the top of the All Movies listing, add some checkboxes that allow the user to filter the list to show only movies with certain MPAA ratings:
 
-![](https://github.com/saasbook/hw-rails-intro/blob/master/filter-screenshot.png)
+![Screenshot. The filter should be included somewhere below the page heading. It should have a checkbox for each rating, followed by a "Refresh" button.](../filter-screenshot.png)
 
 When the Refresh button is pressed, the list of movies is redisplayed showing only those movies whose ratings were checked.
 

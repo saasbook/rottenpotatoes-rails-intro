@@ -6,7 +6,7 @@ When the listing page is redisplayed with sorting-on-a-column enabled, the colum
 
 The result should look something like this:
 
-![](https://github.com/saasbook/hw-rails-intro/blob/master/table-header-screenshot.png)
+![Screeing showing the "Movie Title" column selected with a yellow background.](../table-header-screenshot.png)
 
 **IMPORTANT for grading purposes:**
 
