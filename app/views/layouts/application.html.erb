@@ -9,26 +9,16 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <%# These classes come from the Bootstrap CSS framework. %>
+    <nav class="navbar navbar-expand-lg bg-primary text-white mb-3">
+      <h1 class="title">Rotten Potatoes!</h1>
+    </nav>
     <div class="container">
-      <div class="navbar navbar-expand-lg bg-primary text-white">
-        <h1 class="title">Rotten Potatoes!</h1>
-      </div>
-      <div id="main">
-        <% if flash[:notice] %>
-          <div class="alert alert-danger">
-            <div class="message" id="notice">
-              <%= flash[:notice] %>
-            </div>
-          </div>
-        <% elsif flash[:warning] %>
-          <div class="alert alert-danger">
-            <div class="message" id="warning">
-              <%= flash[:warning] %>
-            </div>
-          </div>
-        <% end %>
+      <%# Render "flash" messages in our application.This loads _flash.erb %>
+      <%= render 'layouts/flash' %>
+      <main id="main">
         <%= yield %>
-      </div>
+      </main>
     </div>
   </body>
 </html>
