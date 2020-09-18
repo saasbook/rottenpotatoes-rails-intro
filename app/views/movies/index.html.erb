@@ -1,0 +1,34 @@
+<!--  This file is app/views/movies/index.html.erb -->
+<h2>All Movies</h2>
+
+<%#  Part 2: Start here... %>
+
+<table class="table table-striped col-md-12" id="movies">
+  <thead>
+    <tr>
+      <th>Movie Title</th>
+      <th>Rating</th>
+      <th>Release Date</th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td>
+          <%= movie.title %>
+        </td>
+        <td>
+          <%= movie.rating %>
+        </td>
+        <td>
+          <%= movie.release_date %>
+        </td>
+        <td>
+          <%= link_to "More about #{movie.title}", movie_path(movie) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new movie', new_movie_path, :class => 'btn btn-primary' %>
