@@ -6,9 +6,13 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th>Movie Title</th>
+      <th class= "<%= highlight_if_current_column(:title) %>">
+        <%= link_to 'Movie Title', {sort_by: :title }, id: 'title_header' %>
+      </th>
       <th>Rating</th>
-      <th>Release Date</th>
+      <th class="<%= highlight_if_current_column(:release_date) %>">
+        <%= link_to 'Release Date', { sort_by: :release_date }, id: 'release_date_header' %>
+      </th>
       <th>More Info</th>
     </tr>
   </thead>
@@ -25,7 +29,7 @@
           <%= movie.release_date %>
         </td>
         <td>
-          <%= link_to "More info about #{movie.title}", movie_path(movie) %>
+          <%= link_to "More about #{movie.title}", movie_path(movie) %>
         </td>
       </tr>
     <% end %>
